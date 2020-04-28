@@ -11,6 +11,8 @@ import seaborn as sns
 # Use the pandas library to read in the data from the csv file.
 irisData = pd.read_csv('iris.csv')
 
+# 'This is Part One of the Project.'
+
 # Use the describe function to obtain a summary of the Iris Data.
 summary = irisData.describe()
 # Convert the summary to a string and round to one decimal place for a better visual.
@@ -18,6 +20,8 @@ text = str(summary.round(1))
 # Create a new file and write the text summary to it.
 with open ('Iris Data Summary.txt', 'w') as f:
     f.write(text)
+
+# 'This is Part Two of the Project.'
 
 # Initialise the variable with an empty string.
 irisVar = ""
@@ -48,3 +52,14 @@ while irisVar != "E":
         # Reset the variable to an empty string to allow the user to input
         # another variable.
         irisVar = ""
+
+# 'This is Part Three of the Project.'
+
+# Use the seaborn library to create a scatter plot of each pair of variables.
+# The hue appropriately matches each of the three species a unique colour,
+# while the height of two offers an optimal visual display.
+sns.pairplot(irisData, hue = "Species", height = 2)
+# Save the figure of the scatter plots in the users folder.
+plt.savefig("Scatter Plots.png")
+# Display the figure of the scatter plots to the user.
+plt.show()
