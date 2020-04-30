@@ -113,6 +113,6 @@ l) Resetting the variable to an empty string to allow the user to input another 
     irisVar = ""
 
 ##### Investigation Part Two Analysis
-![Sepal Length Histogram](/Sepal-length.png "Sepal Length Histogram")
+![Sepal Length Histogram](/Sepal-length-Histogram.png "Sepal Length Histogram")
 
 The standout features of the sepal length histogram are the three highest bars.  They represent different lengths, greater than 20 samples and are significantly taller than the other bars, so I would expect that each of the three bars matches each of the three species of flowers.
