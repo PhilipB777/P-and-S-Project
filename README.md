@@ -29,3 +29,32 @@ I then used the pandas library to read in the data from the iris.csv file.
 
     irisData = pd.read_csv('iris.csv')
     
+##### Investigation Part One Programming
+I output a summary of each variable to a single text file.
+
+           Sepal length  Sepal width  Petal length  Petal width
+    count         150.0        150.0         150.0        150.0
+    mean            5.8          3.1           3.8          1.2
+    std             0.8          0.4           1.8          0.8
+    min             4.3          2.0           1.0          0.1
+    25%             5.1          2.8           1.6          0.3
+    50%             5.8          3.0           4.4          1.3
+    75%             6.4          3.3           5.1          1.8
+    max             7.9          4.4           6.9          2.5
+
+I achieved this by:
+a) using the describe function to obtain a summary of the Iris Data.
+
+    summary = irisData.describe()
+    
+b) Converting the summary to a string and rounding to one decimal place for a better visual.
+
+    text = str(summary.round(1))
+
+c) Creating a new file called ‘Iris Data Summary.txt’ and writing the text summary to it.
+
+    with open ('Iris Data Summary.txt', 'w') as f:
+        f.write(text)
+
+##### Investigation Part One Analysis
+It immediately stands out that there is a big variation in the measurements of the four variables.  The petal length has a min value of 1 cm and a max value of 6.9 cm.  This is a big range of values, but I can see that 25% of the flowers are under 1.6 cm.  I would expect that this 25% is one of the species.  There is also a difference between the mean value of 3.8 cm and the 50% value of 4.4 cm whereas in the other three variables these values are similar.  I would expect that this will make it easier to identify a single species as having a longer petal.
