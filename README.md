@@ -11,10 +11,10 @@ The repository holds various elements of my investigation.
 -	The files ‘Sepal length Histogram.png’, ‘Sepal width Histogram.png’, ‘Petal length Histogram.png’ and ‘Petal width Histogram.png’ which show a histogram of each variable.
 -	The file ‘Scatter Plots.png’ which shows a scatter plot of each pair of variables.
 
-### Introduction
+## Introduction
 Ronald Fisher was a British statistician and biologist who generated the Iris data set in 1936.  He introduced it as an example of linear discriminant analysis.  He analysed three species of the Iris flower by measuring four of their structural features. The three species chosen were 50 Iris setosa, 50 Iris virginica and 50 Iris versicolor.  The sepal length and width along with the petal length and width were measured in centimetres.  He was able to use combinations of these features to distinguish between the species based on his linear discriminant model.
 
-### Investigation using Python
+## Investigation using Python
 I began my program ‘analysis.py’ by importing the various libraries which I required.
 
     import pandas as pd
@@ -29,7 +29,7 @@ I then used the pandas library to read in the data from the iris.csv file.
 
     irisData = pd.read_csv('iris.csv')
     
-##### Investigation Part One Programming
+#### Investigation Part One Programming
 I output a summary of each variable to a single text file.
 
            Sepal length  Sepal width  Petal length  Petal width
@@ -56,11 +56,11 @@ c) Creating a new file called ‘Iris Data Summary.txt’ and writing the text s
     with open ('Iris Data Summary.txt', 'w') as f:
         f.write(text)
 
-##### Investigation Part One Analysis
+#### Investigation Part One Analysis
 It immediately stands out that there is a big variation in the measurements of the four variables.  The petal length has a min value of 1 cm and a max value of 6.9 cm.  This is a big range of values, but I can see that 25% of the flowers are under 1.6 cm.  I would expect that this 25% is one of the species.  There is also a difference between the mean value of 3.8 cm and the 50% value of 4.4 cm whereas in the other three variables these values are similar.  I would expect that this will make it easier to identify a single species as having a longer petal.
 
 
-##### Investigation Part Two Programming
+#### Investigation Part Two Programming
 I saved a histogram of each variable to png files.  I then decided to have the user interact with my finished program by taking the input of a variable.  The input is not case sensitive as I used the capitalise function to format the input to the correct case for the program to run without error.  The program also deals with incorrect data entry and allows the user to exit when the required histograms are saved.  A histogram of each input variable would be saved to the user’s folder.
 
 I achieved this by:<br>
@@ -114,27 +114,27 @@ l) Resetting the variable to an empty string to allow the user to input another 
 
     irisVar = ""
 
-##### Investigation Part Two Analysis
+#### Investigation Part Two Analysis
 ![Sepal Length Histogram](/Sepal%20length%20Histogram.png "Sepal Length Histogram")
 
 The standout features of the sepal length histogram are the three highest bars.  They represent different lengths, greater than 20 samples and are significantly taller than the other bars, so I would expect that each of the three bars matches each of the three species of flowers.
 
-![Sepal Width Histogram](Sepal width.png "Sepal width Histogram")
+![Sepal Width Histogram](/Sepal%20width%20Histogram.png "Sepal Width Histogram")
 
 The sepal width histogram shows that about 110 samples are between 2.5 and 3.5 cm in length.  This large number of samples in the range makes it difficult to differentiate the species with this variable.  There is one larger bar of over 35 samples at around 3.2 cm which may relate to a single species.
 
-![Petal Length Histogram](Petal length.png "Petal length Histogram")
+![Petal Length Histogram](/Petal%20length%20Histogram.png "Petal Length Histogram")
 
 The petal length histogram is very significant because there are no samples between 2.2 and 2.8 cm in length.  This separates the 50 samples which are between 1 and 2.2 cm in length.  These 50 samples should all be of the one species.  The other bars between 2.8 and 7 cm in length suggest that it will be difficult to differentiate between the other two species based on this variable.
 
-![Petal Width Histogram](Petal width.png "Petal width Histogram")
+![Petal Width Histogram](/Petal%20width%20Histogram.png "Petal Width Histogram")
 
 The petal width histogram is also very significant because it shows a cluster of 50 samples between 0.2 and 0.7 cm in length.  I would expect that these 50 samples are of the same species and are the same as the 50 sample cluster in the petal length histogram.  There is one other noticeable feature in the high bar of approximately 32 samples between 1.3 and 1.5 cm in length.  They could be from the one species which may allow the other two species to be differentiated by this variable.
 
-##### Investigation Part Three Programming
+#### Investigation Part Three Programming
 I output a scatter plot of each pair of variables.  I used the seaborn library to produce these scatter plots on a single figure.  I also saved the figure to a png file.
 
-![Scatter Plots](Scatter Plots.png "Scatter plots")
+![Scatter Plots](/Scatter%20Plots.png "Scatter Plots")
 
 I achieved this by:<br>
 a) Using the seaborn library to create a scatter plot of each pair of variables.  The hue appropriately matches each of the three species a unique colour, while the height of two offers an optimal visual display.
@@ -149,7 +149,7 @@ c) Displaying the figure of the scatter plots to the user.
 
     plt.show()
 
-##### Investigation Part Three Analysis
+#### Investigation Part Three Analysis
 I picked four of the scatter plots for this part of my analysis. 
 1. Sepal length vs Petal length
 The Iris-setosa can clearly be identified in its own cluster.  The short petal length is the standout feature of the setosa.  There is some overlap between the Iris-versicolor and Iris-virginica, but they are mostly differentiated on this plot.
@@ -163,25 +163,42 @@ The Iris-setosa is distinguished again in this plot but the samples are in a muc
 4. Petal Width vs Sepal Width
 The short petal width makes the Iris-setosa distinguishable from the other two species.  The outlier is again identifiable in this plot because of the shorter width than the other setosa samples.  At first look the Iris-versicolor and Iris-virginica can be distinguished clearly because the virginica has the widest petal of the three species.  There are however three samples that overlap directly with the versicolor.
 
-##### Conclusion
+#### Conclusion
 In using scatter plots to show the relationship between each pair of variables, it was possible to draw more accurate conclusions about the data set.  The scatter plots enabled me to prove or disprove some of the analysis which I had previously carried out using the summary method and histograms.  Overall, as Ronald Fisher set out to do, he was able to use combinations of the Iris flower’s structural features to distinguish between the species based on his linear discriminant model.
 
-##### References
+#### References
 [1] “A Whirlwind Tour of Python by Jake VanderPlas (O’Reilly). Copyright 2016 O’Reilly Media, Inc., 978-1-491-96465-1.”
+
 [2] The Python Standard Library. https://docs.python.org/3/library/
+
 [3] Real Python Tutorials. https://realpython.com/
+
 [4] Reading in a csv file. https://pandas.pydata.org/docs/user_guide/io.html#csv-text-files
+
 [5] Creating histograms. https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.hist.html#matplotlib.pyplot.hist
+
 [6] Creating scatter plots. https://seaborn.pydata.org/generated/seaborn.pairplot.html
+
 [7] Data set research. https://en.wikipedia.org/wiki/Iris_flower_data_set
+
 [8] Data set research and download. https://archive.ics.uci.edu/ml/datasets/iris
+
 [9] Data set research. https://www.kaggle.com/arshid/iris-flower-dataset
+
 [10] Data set research. https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html
+
 [11] Data set research. https://github.com/RitRa/Project2018-iris
+
 [12] Data set research. https://pythonhosted.org/bob/temp/bob.db.iris/doc/example.html
+
 [13] Writing string to a text file. https://pythonexamples.org/python-write-string-to-text-file/
+
 [14] Rounding off all columns. https://www.geeksforgeeks.org/python-pandas-dataframe-round/
+
 [15] Wrapping strings in python. https://stackoverflow.com/questions/3346230/wrap-long-lines-in-python
+
 [16] Markdown syntax. https://www.markdownguide.org/basic-syntax/
+
 [17] Markdown editor. https://dillinger.io/
+
 [18] Dealing with file name spaces in markdown. https://stackoverflow.com/questions/34569256/link-to-filenames-with-spaces-in-bitbucket-markdown
