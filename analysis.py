@@ -11,7 +11,7 @@ import seaborn as sns
 # Use the pandas library to read in the data from the csv file.
 irisData = pd.read_csv('iris.csv')
 
-# 'This is Part One of the Project.'
+# 'This is Part One of the Analysis.'
 
 # Use the describe function to obtain a summary of the Iris Data.
 summary = irisData.describe()
@@ -21,7 +21,7 @@ text = str(summary.round(1))
 with open ('Iris Data Summary.txt', 'w') as f:
     f.write(text)
 
-# 'This is Part Two of the Project.'
+# 'This is Part Two of the Analysis.'
 
 # Initialise the variable with an empty string.
 irisVar = ""
@@ -30,7 +30,9 @@ while irisVar != "E":
     # Use this nested while loop to allow the user to view multiple histograms.
     while irisVar not in ("Sepal length", "Sepal width", "Petal length", "Petal width", "E"):
         # The capitalise function will format the input to the required case.
-        irisVar = input("Enter the Iris Variable Name to view a histogram or press 'e' to Exit: ").capitalize()
+        irisVar = input("Please enter one of the following variables for the histogram required."
+                        "\n -Sepal length \n -Sepal width \n -Petal length \n -Petal width \nEnter here:"
+                        "(Press 'e' to exit.) \n -").capitalize()
     # Checks that the user hasn't entered e for exit.
     if irisVar != "E":
         # Use the pyplot module to create a histogram of the input iris variable.
@@ -53,7 +55,7 @@ while irisVar != "E":
         # another variable.
         irisVar = ""
 
-# 'This is Part Three of the Project.'
+# 'This is Part Three of the Analysis.'
 
 # Use the seaborn library to create a scatter plot of each pair of variables.
 # The hue appropriately matches each of the three species a unique colour,
@@ -63,3 +65,5 @@ sns.pairplot(irisData, hue = "Species", height = 2)
 plt.savefig("Scatter Plots.png")
 # Display the figure of the scatter plots to the user.
 plt.show()
+
+# References available in the README.md file.
