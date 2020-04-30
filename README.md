@@ -11,8 +11,10 @@ The repository holds various elements of my investigation.
 -	The files **[Sepal length Histogram.png](/Sepal%20length%20Histogram.png)**, **[Sepal width Histogram.png](/Sepal%20width%20Histogram.png)**, **[Petal length Histogram.png](/Petal%20length%20Histogram.png)** and **[Petal width Histogram.png](/Petal%20width%20Histogram.png)** which show a histogram of each variable.
 -	The file **[Scatter Plots.png](/Scatter%20Plots.png)** which shows a scatter plot of each pair of variables.
 
+
 ## Introduction
 Ronald Fisher was a British statistician and biologist who generated the Iris data set in 1936.  He introduced it as an example of linear discriminant analysis.  He analysed three species of the Iris flower by measuring four of their structural features. The three species chosen were 50 Iris setosa, 50 Iris virginica and 50 Iris versicolor.  The sepal length and width along with the petal length and width were measured in centimetres.  He was able to use combinations of these features to distinguish between the species based on his linear discriminant model.
+
 
 ## Investigation using Python
 I began my program **[analysis.py](/analysis.py)** by importing the various libraries which I required.
@@ -28,7 +30,8 @@ Seaborn is a library based on matplotlib.  It is an interface which helps to dev
 I then used the pandas library to read in the data from the iris.csv file.
 
     irisData = pd.read_csv('iris.csv')
-    
+ 
+ 
 #### Investigation Part One Programming
 I output a summary of each variable to a single text file.
 
@@ -46,6 +49,7 @@ c) Creating a new file called 'Iris Data Summary' and writing the text summary t
 
     with open ('Iris Data Summary.txt', 'w') as f:
         f.write(text)
+
 
 #### Investigation Part One Analysis
            Sepal length  Sepal width  Petal length  Petal width
@@ -116,6 +120,7 @@ l) Resetting the variable to an empty string to allow the user to input another 
 
     irisVar = ""
 
+
 #### Investigation Part Two Analysis
 ![Sepal Length Histogram](/Sepal%20length%20Histogram.png "Sepal Length Histogram")
 
@@ -132,6 +137,7 @@ The petal length histogram is very significant because there are no samples betw
 ![Petal Width Histogram](/Petal%20width%20Histogram.png "Petal Width Histogram")
 
 The petal width histogram is also very significant because it shows a cluster of 50 samples between 0.2 and 0.7 cm in length.  I would expect that these 50 samples are of the same species and are the same as the 50 sample cluster in the petal length histogram.  There is one other noticeable feature, the high bar of approximately 32 samples between 1.3 and 1.5 cm in length.  They could be from the one species which may allow the other two species to be differentiated by this variable.
+
 
 #### Investigation Part Three Programming
 I output a scatter plot of each pair of variables.  I used the seaborn library to produce these scatter plots on a single figure.  I also saved the figure to a png file.
@@ -150,6 +156,7 @@ c) Displaying the figure of the scatter plots to the user.
 
     plt.show()
 
+
 #### Investigation Part Three Analysis
 ![Scatter Plots](/Scatter%20Plots.png "Scatter Plots")
 
@@ -163,11 +170,13 @@ The Iris-setosa can again be clearly identified in its own cluster.  There is ho
 3. Petal length vs Petal width<br>
 The Iris-setosa is distinguished again in this plot but the samples are in a much smaller cluster.  There is a clear differentiation between the setosa and the other two species.  The small cluster shows that a short petal length and width are standout features of the setosa.  This plot also seems to show that the Iris-versicolor and Iris-virginica can be identified using this combination of features.  The virginica has the longest and widest petals of the three species.
 
-4. Petal Width vs Sepal Width<br>
+4. Petal width vs Sepal width<br>
 The short petal width makes the Iris-setosa distinguishable from the other two species.  The outlier is again identifiable in this plot because of the shorter width than the other setosa samples.  At first look the Iris-versicolor and Iris-virginica can be distinguished clearly because the virginica has the widest petal of the three species.  There are however three samples that overlap directly with the versicolor.
 
+
 ## Conclusion
-In using scatter plots to show the relationship between each pair of variables, it was possible to draw more accurate conclusions about the data set.  The scatter plots enabled me to prove or disprove some of the analysis which I had previously carried out using the summary method and histograms.  Overall, as Ronald Fisher set out to do, I was able to use combinations of the Iris flower’s structural features to distinguish between the species based on his linear discriminant model.
+In using scatter plots to show the relationship between each pair of variables, it was possible to draw more accurate conclusions about the data set.  The scatter plots enabled me to prove or disprove some of the analysis which I had previously carried out using the summary method and histograms.  Overall, as Ronald Fisher set out to do, I was able to use Python to generate combinations of the Iris flower’s structural features to distinguish between the species based on his linear discriminant model.
+
 
 ## References
 [1] “A Whirlwind Tour of Python by Jake VanderPlas (O’Reilly). Copyright 2016 O’Reilly Media, Inc., 978-1-491-96465-1.”
